@@ -1,0 +1,54 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    background-color: rgb(96, 121, 255);
+}
+
+header h1 {
+    display: inline-block;
+}
+
+nav a {
+    margin: 0 10px 0 10px;
+}
+
+nav a:first-child {
+    margin: 0 10px 0 0;
+}
+
+nav a:last-child {
+    margin: 0 0 0 10px;
+}
+
+table {
+    width: 80%;
+    margin: 10px auto 0 auto;
+    border-collapse: collapse;
+}
+
+th {
+    color: white;
+    background-color: blue;
+    padding: 10px 0 10px 0;
+}
+
+tr:nth-child(even) {
+    background-color: darkgray;
+}
+
+tr, td {
+    padding: 5px;
+}
+
+#products {
+    height: 500px;
+}

@@ -1,0 +1,66 @@
+<div style="overflow-x:auto;" id="products">
+
+{{#if collections}}
+    <br>
+    <form action="/createCollection" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <button type="submit">Create</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th></th>
+        </tr>
+        {{#each collections}}
+            <tr>
+                <td><a href="/{{this.name}}">{{ this.name }}</a></td>
+                <td><a href="/removeCollection/{{this.name}}">Remove</a></td>
+            </tr>
+        {{/each}}
+    </table>
+{{else if database}}
+    <br>
+    <form action="/save" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="cuisine" placeholder="cuisine">
+        <button type="submit">Insert</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>CUISINE</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {{#each database}}
+            {{#if updateID}}
+                <!-- TODO -->
+                <form action="/updateDocument/{{this._id}}" method="POST">
+                    <td><input type="text" name="name" value="{{this.name}}"></td>
+                    <td><input type="text" name="cuisine" value="{{this.cuisine}}"></td>
+                    <td><button type="submit">Save</button></td>
+                </form>
+            {{else}}
+                <tr>
+                    <td>{{ this._id }}</td>
+                    <td>{{ this.name }}</td>
+                    <td>{{ this.cuisine }}</td>
+                    <td><a href="/update/{{this._id}}">Update</a></td>
+                    <td><a href="/remove/{{this._id}}">Remove</a></td>
+                </tr>
+            {{/if}}
+        {{/each}}
+    </table>
+{{else}}
+    <br>
+    <form action="/save" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="cuisine" placeholder="cuisine">
+        <button type="submit">Insert</button>
+    </form>
+{{/if}}
+
+</div>

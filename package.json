@@ -1,0 +1,18 @@
+{
+  "name": "luis",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1"
+  },
+  "description": "Acamica exercise",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis",
+  "license": "ISC"
+}
